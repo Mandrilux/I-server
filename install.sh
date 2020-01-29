@@ -13,6 +13,7 @@ update(){
 
 base(){
     apt-get -y install emacs
+    apt-get -y install htop
     apt-get -y install wget
     apt-get -y install net-tools
     apt-get -y install curl
