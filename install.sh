@@ -17,6 +17,7 @@ base(){
     apt-get -y install net-tools
     apt-get -y install curl
     apt-get -y install python3
+    apt-get -y install sudo 
     cp script/automate.sh /bin/ && chmod +x /bin/automate.sh
 }
 
@@ -38,11 +39,10 @@ installAll(){
 
 read choice
 update
-
+base
 if [ "$choice" -eq "1" ]
 then
     echo "Install web serveur."
-    base
     apt-get -y install apache2
     apt-get -y install lsb-release apt-transport-https ca-certificates
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
