@@ -23,7 +23,13 @@ base(){
 }
 
 webserver(){
-    apache
+    read choiceServer
+    if [ "$choiceServer" -eq "1" ]
+    then
+        apache
+    else
+       echo "Rien"
+    fi
 }
 
 apache(){
@@ -65,9 +71,7 @@ update
 base
 if [ "$choice" -eq "1" ]
 then
-<<<<<<< HEAD
     webserver
-=======
     echo "Install web serveur."
     apt-get -y install apache2
     apt-get -y install lsb-release apt-transport-https ca-certificates
@@ -81,7 +85,6 @@ then
 
     PHPVersion=$(php --version | head -n 1 | cut -d " " -f 2 | cut -c 1,3);
    echo $PHPVersion
->>>>>>> ae6fa5978a01ac6f2a52c71a356a905c4204e850
 elif [ "$choice" -eq "2" ]
 then
   security
