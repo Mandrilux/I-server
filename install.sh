@@ -19,6 +19,7 @@ base(){
     apt-get -y install curl
     apt-get -y install python3
     apt-get -y install sudo 
+    apt-get -y install make
     cp script/automate.sh /bin/ && chmod +x /bin/automate.sh
 }
 
