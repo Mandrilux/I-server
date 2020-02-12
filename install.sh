@@ -42,6 +42,7 @@ apache(){
     update
     apt-get -y install php7.3
     apt-get -y install php7.3-cli php7.3-fpm php7.3-json php7.3-pdo php7.3-mysq$
+    apt-get -y install php7.3-intl
     apt-get -y install libapache2-mod-php7.3
     apt-get -y install certbot python-certbot-apache
 
