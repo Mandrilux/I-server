@@ -20,6 +20,7 @@ base(){
     apt-get -y install python3
     apt-get -y install sudo 
     apt-get -y install make
+    apt-get -y install unzip
     cp script/automate.sh /bin/ && chmod +x /bin/automate.sh
 }
 
@@ -48,6 +49,12 @@ apache(){
 
     PHPVersion=$(php --version | head -n 1 | cut -d " " -f 2 | cut -c 1,3);
     echo $PHPVersion
+
+   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+   php composer-setup.php
+   php -r "unlink('composer-setup.php');"
+   mv composer.phar /bin/composer && chmod +x /bin/composer
+
 }
 
 mysql(){
