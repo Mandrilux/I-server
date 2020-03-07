@@ -1,0 +1,10 @@
+---
+
+- hosts: lemp
+  remote_user: hakase
+  become: yes
+
+  roles:
+    - common
+    - web
+    - db
